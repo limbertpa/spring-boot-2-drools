@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 import com.lparce.model.Product;
 
 @Service
-public class JewelleryShopService {
+public class RestDroolsService {
 
 	private final KieContainer kieContainer;
 
 	@Autowired
-	public JewelleryShopService(KieContainer kieContainer) {
+	public RestDroolsService(KieContainer kieContainer) {
 		this.kieContainer = kieContainer;
 	}
 

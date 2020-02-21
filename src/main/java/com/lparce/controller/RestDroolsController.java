@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lparce.model.Product;
-import com.lparce.service.JewelleryShopService;
+import com.lparce.service.RestDroolsService;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 @RestController
-public class JewelleryShopController {
-	private static final Logger log = LoggerFactory.getLogger(JewelleryShopController.class);
-	private final JewelleryShopService jewelleryShopService;
+public class RestDroolsController {
+	private static final Logger log = LoggerFactory.getLogger(RestDroolsController.class);
+	private final RestDroolsService restDroolsService;
 
 	@Autowired
-	public JewelleryShopController(JewelleryShopService jewelleryShopService) {
-		this.jewelleryShopService = jewelleryShopService;
+	public RestDroolsController(RestDroolsService restDroolsService) {
+		this.restDroolsService = restDroolsService;
 	}
 
 	@RequestMapping(value = "/getDiscount", method = RequestMethod.GET, produces = "application/json")
@@ -32,7 +32,7 @@ public class JewelleryShopController {
 		product.setAmount(new BigDecimal(12.2));
 		product.setDate(new Date());
 		log.debug("product {} ",product);
-		jewelleryShopService.getProductDiscount(product);
+		restDroolsService.getProductDiscount(product);
 		log.debug("product {} ",product);
 		return product;
 	}
@@ -44,7 +44,7 @@ public class JewelleryShopController {
 		product.setType(type);
 		product.setAmount(new BigDecimal(16.2));
 		log.debug("product {} ",product);
-		jewelleryShopService.getProductDiscountA(product);
+		restDroolsService.getProductDiscountA(product);
 		log.debug("product {} ",product);
 		return product;
 	}
